@@ -1,0 +1,70 @@
+@import "_variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7pbv17');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7pbv17#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?7pbv17') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?7pbv17') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?7pbv17##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cheveron {
+  &:before {
+    content: $icon-cheveron; 
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close; 
+  }
+}
+.icon-bars {
+  &:before {
+    content: $icon-bars; 
+  }
+}
+.icon-github {
+  &:before {
+    content: $icon-github; 
+  }
+}
+.icon-linkedin {
+  &:before {
+    content: $icon-linkedin; 
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook; 
+  }
+}
+.icon-skype {
+  &:before {
+    content: $icon-skype; 
+  }
+}
+.icon-telegram {
+  &:before {
+    content: $icon-telegram; 
+  }
+}
+

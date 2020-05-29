@@ -1,0 +1,541 @@
+// My own SCSS styles
+
+// Page
+html{
+	h2 {
+		margin-bottom: 120px;
+	}
+	h4 {
+		margin-bottom: 15px;
+	}
+	@include media-screen(992px, max-width) {
+		.container {
+			width: 100%;
+			max-width: none;
+		}
+		h1 {
+			font-size: $font-size-base * 4;
+		}
+	}
+	@include media-screen(375px, max-width) {
+		h1 {
+			margin-bottom: 30px !important;
+		}
+	}
+	@include media-screen(320px, max-width) {
+		h1 {
+			margin-bottom: 50px !important;
+		}
+	}
+
+// Body
+	body {
+		display: none;
+		cursor: default;
+		letter-spacing: 1.5px;
+		@include text();
+		.ru {
+			display: none;
+		}
+
+// To top
+		#to-top {
+			@include icon-link(transparent, transparent, center, auto, auto);
+			z-index: 99;
+			width: auto;
+			height: auto;
+			border: none;
+			position: fixed;
+			bottom: 60px;
+			mix-blend-mode: difference;
+			filter: invert(1);
+			display: none;
+			@include media-screen(992px, max-width) {
+			}
+			.icon-cheveron {
+				@include icon($font-size-base * 3, $black);
+				font-weight: 100;
+				@include media-screen(992px, max-width) {
+					font-weight: 400;
+				}
+			}
+		}
+
+// Header
+		header {
+			@include section($gray-900, $section-padding-bottom, 0px);
+			height: 100vh;
+			padding-bottom: 0;
+			@include media-screen(768px, max-width) {
+				padding-top: 200px;
+			}
+			.menu {
+				width: 100%;
+				height: 50px;
+				background: $gray-900;
+				position: fixed;
+				top: 0;
+				z-index: 500;
+				@include media-screen(992px, max-width) {
+					height: 60px;
+				}
+				.container {
+					position: relative;
+					height: 100%;
+					.row {
+						height: 100%;
+						.col {
+							position: relative;
+							background: $gray-900;
+							.burger {
+								display: none;
+								@include media-screen(992px, max-width) {
+									display: block;
+									width: 40px;
+									height: 25px;
+									cursor: pointer;
+									position: relative;
+									margin-top: 15px;
+									margin-bottom: 25px;
+									vertical-align: middle;
+								}
+								.burger__line {
+									display: block;
+									width: 100%;
+									height: 3px;
+									background-color: $white;
+									position: absolute;
+									left: 0;
+									transition: .3s all linear;
+								}
+								.burger__line_first {
+										top: 0;
+									}
+								.burger__line_second {
+									top: 50%;
+									transform: translateY(-50%);
+								}
+								.burger__line_third {
+									top: 50%;
+									transform: translateY(-50%);
+								}
+								.burger__line_fourth {
+									bottom: 0;
+								}
+							}
+							.burger_active {
+								.burger__line_first {
+									opacity: 0;
+								}
+								.burger__line_fourth {
+									opacity: 0;
+								}
+								.burger__line_second{
+									transform: translateY(-50%) rotate(45deg);
+								}
+								.burger__line_third{
+									transform: translateY(-50%) rotate(-45deg);
+								}
+							}
+							.lang {
+								height: 20px;
+								position: absolute;
+								top: 0;
+								left: auto;
+								right: 15px;
+								margin: 15px auto;
+								a {
+									display: block;
+									color: $white;
+									text-transform: uppercase;
+									text-decoration: none;
+								}
+							}
+							#navlist {
+								height: 100%;
+								@include media-screen(992px, max-width) {
+									display: none;
+									width: 50%;
+									height: 100vh;
+									margin: 15% auto;
+								}
+								.nav-item {
+									position: relative;
+									z-index: 2;
+									margin: 4px 30px 0px;
+									@include media-screen(992px, max-width) {
+										margin: 50px auto;
+									}
+									.nav-link {
+										@include text($text-transform: uppercase, $color: $white);
+										padding: 10px 0px;
+										transition: padding none;
+									}
+									&:first-child {
+										margin-left: 0px;
+										@include media-screen(992px, max-width){
+											margin-top: 0px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.header-content {
+				height: 100%;
+				background: $white;
+				color: $gray-900;
+				position: relative;
+				.line {
+					@include line(45%, 4px, $gray-900, 230px);
+					@include media-screen(768px, max-width) {
+						@include line(55%, 4px, $gray-900, 220px);
+					}
+					@include media-screen(576px, max-width) {
+						@include line(100%, 4px, $gray-900, 220px);
+					}
+					@include media-screen(375px, max-width) {
+						@include line(100%, 4px, $gray-900, 260px);
+					}
+				}
+				.box {
+					position: relative;
+					.text {
+						margin: 120px auto;
+						@include media-screen(992px, max-width) {
+							vertical-align: middle;
+							display:inline-block;
+						}
+						@include media-screen(875px, max-width) {
+							margin-bottom: 40px;
+							vertical-align: bottom;
+						}
+						@include media-screen(375px, max-width) {
+							margin-top: 170px;
+							margin-bottom: 20px;
+						}
+						h1 {
+							margin-bottom: $headings-margin-bottom * 2.5;
+						}
+						h2 {
+							margin-bottom: $headings-margin-bottom *0.5;
+							font-size: $font-size-base * 2;
+							h2 {
+								font-size: $font-size-base * 1.6;
+							}
+						}
+					}
+					.photo {
+						height: 360px;
+						margin: auto;
+						position: absolute;
+						top: 0px;
+						bottom: 0px;
+						right: 15px;
+						left: auto;
+						box-shadow: $box-shadow;
+						white-space: nowrap;
+						overflow: hidden;
+						@include media-screen(992px, max-width) {
+							height: 310px;
+						}
+						@include media-screen(875px, max-width) {
+							height: 300px;
+							top: -50px;
+							bottom: auto;
+						}
+						@include media-screen(768px, max-width) {
+							height: 260px;
+							top: -130px;
+						}
+						@include media-screen(576px, max-width) {
+							top: -120px;
+						}
+					}
+				}
+			}
+		}
+
+// Skills
+		#skills {
+			position: relative;
+			@include section($gray-900, $section-padding-top, $section-padding-bottom);
+			.line {
+				@include line(30%, 2px, $white, 140px);
+				@include media-screen(992px, max-width) {
+					@include line(40%, 2px, $white, 140px);
+				}
+				@include media-screen(576px, max-width) {
+					@include line(100%, 2px, $white, 140px);
+				}
+			}
+			.skills-list {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: repeat(auto-fill, auto);
+				grid-column-gap: 80px;
+				grid-row-gap: 80px;
+				@include media-screen(992px, max-width) {
+					grid-template-columns: 1fr;
+					grid-template-rows: repeat(auto-fill, auto);
+				}
+				.item {
+					box-shadow: 0 0 30px rgba(255,255,255, 0.6);
+					line-height: 1.5;
+					padding: 20px 30px;
+					transition: all 0.1s ease-out;
+					&:hover {
+						box-shadow: none;
+					}
+				}
+			}
+		}
+
+// Portfolio
+		#portfolio {
+			position: relative;
+			text-align: center;
+			@include section($white, $section-padding-top, $section-padding-bottom);
+			.line {
+				@include line(30%, 2px, $gray-900, 140px);
+				@include media-screen(992px, max-width) {
+					@include line(40%, 2px, $gray-900, 140px);
+				}
+				@include media-screen(576px, max-width) {
+					@include line(100%, 2px, $gray-900, 140px);
+				}
+			}
+			h2 {
+				display: inline-block;
+				float: left;
+				color: $black;
+			}
+			.icon-link {
+				@include icon-link($background-color: $gray-900, $border-color: $gray-900, $padding: 5px 6px, $margin: 0 0 auto);
+				transition: all 0.5s ease-out;
+				float: right;
+				.icon-github {
+					@include icon($font-size-base * 2.1, $white);
+					line-height: 0.9;
+				}
+				&:hover {
+					@include icon-link($background-color: $white, $border-color: $gray-900, $padding: 5px 6px, $margin: 0 0 auto);
+					.icon-github {
+						@include icon($font-size-base * 2.1, $gray-900);
+					}
+				}
+			}
+			.loadMore {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: repeat(auto-fill, auto);
+				.item {
+					position: relative;
+					background-color: $gray-900;
+					height: 320px;
+					margin-bottom: 40px;
+					@include media-screen(992px, max-width) {
+						height: 270px;
+					}
+					@include media-screen(768px, max-width) {
+						height: 280px;
+					}
+					@include media-screen(576px, max-width) {
+						height: 360px;
+					}
+					.text-hidden {
+						margin: 0;
+						transform: translate(-50%, -50%);
+						position: absolute; 
+						top: 50%; 
+						left: 50%;
+						z-index: 1;
+					}
+					.item-img {
+						height: 100%;
+						position: relative;
+						z-index: 2;
+						box-shadow: $box-shadow;
+						.mask {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							background: $gray-900;
+							overflow: hidden;
+							opacity: 0;
+							transition: opacity 0.5s ease-out;
+							.mask-box {
+								width: 100%;
+								padding: 10px 20px 30px;
+								h3 {
+									color: $white;
+									@include media-screen(768px, max-width) {
+										font-size: $font-size-base * 1.6;
+									}
+								}
+								ul {
+									margin-left: 0;
+									padding-left: 0;
+									li {
+										@include text();
+										display: inline-block;
+										list-style-type: none;
+										padding: 4px 16px;
+									}
+								}
+								.button-link {
+									@include button(260px, auto, transparent, $white, $white, normal, 16px);
+									@include media-screen(375px, max-width) {
+										width: 180px;
+									}
+									&:hover {
+										@include button(260px, auto, $white, $white, $gray-900, bold, 16px);
+										@include media-screen(375px, max-width) {
+											width: 180px;
+										}
+									}
+								}
+							}
+						}
+						&:hover {
+							box-shadow: none;
+							.mask{
+								opacity: 1;
+							}
+						}
+					}
+					#makeup-artist {
+						@include img(url('../img/portfolio/makeup-artist.jpg'), cover, 50% 75%, no-repeat);
+					}
+					#web-dev-project {
+						@include img(url('../img/portfolio/web-development-project.jpg'), cover, 50% 50%, no-repeat);
+					}
+					#singup-form {
+						@include img(url('../img/portfolio/singup-form.jpg'), cover, 50% 0, no-repeat);
+						@include media-screen(576px, max-width) {
+							background-position: 30% 0;
+						}
+					}
+					#example-page {
+						@include img(url('../img/portfolio/example-page.jpg'), cover, 50% 0, no-repeat);
+						@include media-screen(576px, max-width) {
+							background-position: 25% 0;
+						}
+					}
+					#vacuum-forming {
+						@include img(url('../img/portfolio/vacuum-forming.jpg'), cover, 50% 0, no-repeat);
+						@include media-screen(576px, max-width) {
+							background-position: 25% 0;
+						}
+					}
+				}
+			}
+			.btn-load-more {
+				letter-spacing: 2px;
+				@include button(260px, auto, $gray-900, $gray-900, $white, normal, 50px);
+				&:hover {
+					@include button(260px, auto, transparent, $gray-900, $gray-900, bold, 50px);
+				}
+			}
+		}
+
+// Contact
+		#contact {
+			position: relative;
+			@include section($gray-900, $section-padding-top, 100px);
+			.line {
+				@include line(30%, 2px, $white, 140px);
+				@include media-screen(992px, max-width) {
+					@include line(40%, 2px, $white, 140px);
+				}
+				@include media-screen(576px, max-width) {
+					@include line(100%, 2px, $white, 140px);
+				}
+			}
+			.form {
+				margin-bottom: 82px;
+				::-webkit-input-placeholder {
+					color: #a1a1a1;
+				}
+				input {
+					color: $white;
+				}
+				.form-btn {
+					letter-spacing: 2px;
+					@include button(100%, auto, $white, $white, $black, bold, 0px);
+					&:hover {
+						@include button(100%, auto, transparent, $white, $white, normal, 0px);
+					}
+				}
+			}
+			#pop-up {
+				display: none;
+			}
+			.list-group {
+				margin: 0 auto 30px;
+				width: 300px;
+				@include media-screen(375px, max-width) {
+					width: auto;
+				}
+				.list-group-item {
+					margin: auto;
+					@include media-screen(375px, max-width) {
+						padding: 0.75rem 0;
+					}
+					.icon-link {
+						@include icon-link($background-color: $white, $padding: 5px 6px, $margin: 0 0 auto);
+						transition: all 0.5s ease-out;
+						float: right;
+						i {
+							@include icon($font-size-base * 1.8, $gray-900);
+						}
+						&:hover {
+							@include icon-link($padding: 5px 6px, $margin: 0 0 auto);
+							i {
+								@include icon($font-size-base * 1.8, $white);
+							}
+						}
+					}
+				}
+			}
+			.github-pages {
+				@include text($font-size: $font-size-base * 1.25);
+				display: inline-block;
+				text-decoration: none;
+				position: relative;
+				padding: 10px 0px;
+				margin-bottom: 30px;
+			}
+			.mail {
+				@include text($font-size: $font-size-base * 1.25);
+				display: inline-block;
+				text-decoration: none;
+				position: relative;
+				padding: 10px 0px;
+			}
+		}
+
+// Footer
+		#footer {
+			@include text();
+			background-color: $gray-900;
+			padding: 10px;
+			p {
+				margin-bottom: $font-size-base * 0.5;
+				span {
+					display: inline-block;
+					font-size: 26px;
+					line-height: 16px;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}

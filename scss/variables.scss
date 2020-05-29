@@ -1,0 +1,65 @@
+// Defining my own variables and redefining variables Bootstrap 4
+
+// My own variables
+// 
+$section-padding-top:         80px;
+$section-padding-bottom:      140px;
+
+// Redefining variables Bootstrap 4
+//
+// Color
+//
+$white:    #FFF !default;
+$gray-400: #C0C0C0 !default;
+$gray-800: #333333 !default;
+$gray-900: #1A1A1A !default;
+$black:    #000 !default;
+
+//
+// Typography
+//
+$font-family-base:            'adineue PRO Cyr Light Web', sans-serif !default;
+$font-size-base:              1rem * 1.2 !default;
+
+$h1-font-size:                $font-size-base * 5 !default;
+$h2-font-size:                $font-size-base * 2.2 !default;
+$h3-font-size:                $font-size-base * 1.8 !default;
+$h4-font-size:                $font-size-base * 1.3 !default;
+
+$line-height-base:            1.15 !default;
+
+$spacer: $font-size-base      !default;
+
+//
+// Headings
+//
+$headings-margin-top:         $spacer * 1.25 !default;
+$headings-margin-bottom:      $spacer * 1.25 !default;
+
+//
+// Components
+//
+$border-width:                0 !default;
+$border-radius:               0 !default;
+$box-shadow:                  0 0 25px rgba($black, .5) !default;
+
+//
+// Forms
+//
+$input-height:                1rem * 3.4 !default;
+$input-bg:                    transparent !default;
+$input-color:                 $gray-400 !default;
+$input-border-width:          1px !default;
+$input-border-color:          $white !default;
+
+//
+// Buttons + Forms
+//
+$input-btn-padding-y:         1rem !default;
+
+//
+// List group
+//
+$list-group-bg:               transparent !default;
+$list-group-item-padding-y:   .75rem !default;
+$list-group-item-padding-x:   .75rem !default;
