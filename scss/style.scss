@@ -505,20 +505,20 @@ html{
 					}
 				}
 			}
-			.github-pages {
-				@include text($font-size: $font-size-base * 1.25);
-				display: inline-block;
-				text-decoration: none;
-				position: relative;
-				padding: 10px 0px;
-				margin-bottom: 30px;
-			}
 			.mail {
 				@include text($font-size: $font-size-base * 1.25);
 				display: inline-block;
 				text-decoration: none;
 				position: relative;
 				padding: 10px 0px;
+			}
+			.github-pages {
+				@include text($font-size: $font-size-base * 1.25);
+				display: inline-block;
+				text-decoration: none;
+				position: relative;
+				padding: 10px 0px;
+				margin-top: 30px;
 			}
 		}
 

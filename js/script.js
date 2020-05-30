@@ -102,7 +102,7 @@ $(document).ready(function() {
 			setTimeout(function() {
 				th.trigger('reset');
 				$.fancybox.close();
-			}, 3000);
+			}, 4000);
 		});
 		return false;
 	});
