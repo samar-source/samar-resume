@@ -40,7 +40,7 @@ html{
 
 // To top
 		#to-top {
-			@include icon-link(transparent, transparent, center, auto, auto);
+			@include icon-link(transparent, transparent, center);
 			z-index: 99;
 			width: auto;
 			height: auto;
@@ -169,7 +169,6 @@ html{
 									.nav-link {
 										@include text($text-transform: uppercase, $color: $white);
 										padding: 10px 0px;
-										transition: padding none;
 									}
 									&:first-child {
 										margin-left: 0px;
